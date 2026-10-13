@@ -20,3 +20,25 @@ These are planning decisions. No lab capture, handshake identification, or analy
 ### Next experiment
 
 Verify adapter visibility in SEED Ubuntu, or start with a published sample capture if capture hardware is not available. Use the [lab entry template](lab-entry-template.md) to record actual findings.
+
+## 2026-10-13 — First working network capture
+
+### Objective
+
+Confirm that Wireshark can capture browser traffic inside the SEED Ubuntu VM.
+
+### Problem and resolution
+
+Initially, no packets appeared while using Firefox. An active filter was present; clearing it resolved the issue. The exact filter was not recorded, and a software bug has not been established.
+
+### Evidence
+
+Wireshark captured traffic on `enp0s3`. The first successful screenshot showed 474 captured packets and 474 displayed packets, with TCP and TLS traffic. A later screenshot showed the learner inspecting Ethernet, IPv4, and TCP packet details.
+
+### Lesson learned
+
+Start the first capture with both capture and display filters empty. Confirm traffic is visible, then apply filters deliberately. A display filter hides packets from view; a capture filter excludes packets from collection.
+
+### Limitations and next step
+
+This was ordinary VM network traffic, not raw 802.11 frames or a Wi-Fi four-way handshake. Continue inspecting protocol layers, then use a published wireless capture for the handshake exercise.
