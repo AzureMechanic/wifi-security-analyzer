@@ -33,6 +33,14 @@ Record which USB device is the adapter, the wireless interface name, and whether
 
 The VM's ordinary virtual network connection is not equivalent to direct access to a wireless radio. A compatible USB adapter passed through to SEED Ubuntu is the planned capture route. Monitor-mode availability depends on the hardware and driver; see the [capture setup reference](references.md).
 
+## Before the first capture: clear filters
+
+Start the initial Wireshark capture with both the capture filter and display filter empty. Select the VM's active network interface, start capturing, and generate traffic in Firefox inside the VM. Confirm packets appear before applying filters to narrow the view.
+
+An active filter caused the first attempt to appear empty. Clearing the filter resolved the issue. The exact filter was not recorded, so this is documented as a filter-related troubleshooting step rather than a confirmed software bug.
+
+Capture filters limit what is collected; display filters limit what is shown. Clearing a display filter can reveal packets already captured, but packets excluded by a capture filter require a new capture.
+
 ## First exercise: offline analysis
 
 Before live capture, choose a documented wireless example from Wireshark's sample captures. Keep downloaded captures outside version control and record the source, filename, and any redistribution terms in the lab entry.
@@ -49,4 +57,6 @@ Once the adapter is verified, document the exact monitor-mode and channel config
 
 ## Results
 
-No setup commands or capture experiments have been run in SEED Ubuntu for this project yet.
+Ordinary network capture is working on the VM interface `enp0s3`. A screenshot showed 474 captured packets with all 474 displayed, including TCP and TLS traffic. The learner reported that clearing an active filter resolved the initial empty view.
+
+This verifies ordinary network capture inside the VM; raw wireless capture and Wi-Fi handshake analysis remain unverified.
