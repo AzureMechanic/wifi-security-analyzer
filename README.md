@@ -1,6 +1,6 @@
 # Wi-Fi Security Analyzer
 
-A learning project exploring wireless frames, connection handshakes, and evidence-based security analysis with Kali Linux, Wireshark, and eventually Python.
+A learning project exploring wireless frames, connection handshakes, and evidence-based security analysis with SEED Ubuntu Linux, Wireshark, and eventually Python.
 
 ## Current status
 
@@ -19,12 +19,12 @@ A learning project exploring wireless frames, connection handshakes, and evidenc
 | Component | Status |
 | --- | --- |
 | Host operating system | Windows |
-| Analysis environment | Kali Linux virtual machine selected |
-| Virtualization application | To be confirmed |
+| Analysis environment | SEED Ubuntu Linux virtual machine |
+| Virtualization application | VirtualBox (version to be recorded) |
 | USB Wi-Fi adapter and chipset | To be confirmed |
 | Monitor-mode support | Not verified |
 | Test network and client | To be documented |
-| Tools | Wireshark and TShark; Python planned |
+| Tools | Wireshark installed; TShark availability to be checked; Python planned |
 
 ## Explore the project
 
@@ -43,7 +43,7 @@ Reports will distinguish observations from interpretations. A missing handshake 
 ## Milestones
 
 - [x] Define the project and start the learning documentation.
-- [ ] Verify the Kali VM and capture hardware.
+- [ ] Verify the SEED Ubuntu VM and capture hardware.
 - [ ] Analyze a published sample capture.
 - [ ] Capture a test device reconnecting to an authorized lab network.
 - [ ] Explain a handshake using packet-level evidence.
